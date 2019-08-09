@@ -1,0 +1,1 @@
+@"C:\Users\Œ‚πÛ≥ø\flasky\venv\Scripts\python.exe" "C:\Users\Œ‚πÛ≥ø\flasky\venv\Scripts\markdown_py" %*

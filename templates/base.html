@@ -1,0 +1,57 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"
+      type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"
+      type="image/x-icon">
+{% endblock %}
+
+{% block navbar %}
+<!--指定导航条组件为黑色主题-->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <!--设置button元素为导航条组件的切换钮-->
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--设置导航条组件内的品牌图标,默认是放文字的,
+            也可以放图片，但必须是小图片,如果图片太大，位置就会靠下.-->
+            <a class="navbar-brand" href="/">Flasky</a>
+        </div>
+        <!--设置div元素为导航条组件各列表项的父元素-->
+        <div class="navbar-collapse collapse">
+            <!--设置ul为导航条组件内的列表元素-->
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+        {% block page_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
