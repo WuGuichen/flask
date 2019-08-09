@@ -30,11 +30,8 @@ app.config['MAIL_PORT'] = 465               # 端口
 app.config['MAIL_USE_SSL'] = True           # 重要，qq邮箱需要使用SSL
 app.config['MAIL_USE_TLS'] = False          # 不需要使用TLS
 app.config['MAIL_USERNAME'] = '577024128@qq.com'  # 填邮箱
-<<<<<<< HEAD
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')      # 填授权码
-=======
 app.config['MAIL_PASSWORD'] = 'qraqnoimfnuxbbhg'      # 填授权码
->>>>>>> origin/master
 
 bootstrap = Bootstrap(app)
 moment = Moment(app)
